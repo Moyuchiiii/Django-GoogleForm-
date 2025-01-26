@@ -1,0 +1,52 @@
+{% extends "base/diary_base.html" %}
+{% block body %}
+
+<h2>{{ page.title }}</h2>
+<div>{{ page.page_date }}</div>
+{% if page.q1 %}
+<div>問1.{{ page.q1 | linebreaksbr }}</div>
+<div>{{ page.a1 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q2 %}
+<div>問2.{{ page.q2 | linebreaksbr }}</div>
+<div>{{ page.a2 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q3 %}
+<div>問3.{{ page.q3 | linebreaksbr }}</div>
+<div>{{ page.a3 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q4 %}
+<div>問4.{{ page.q4 | linebreaksbr }}</div>
+<div>{{ page.a4 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q5 %}
+<div>問5.{{ page.q5 | linebreaksbr }}</div>
+<div>{{ page.a5 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q6 %}
+<div>問6.{{ page.q6 | linebreaksbr }}</div>
+<div>{{ page.a6 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q7 %}
+<div>問7.{{ page.q7 | linebreaksbr }}</div>
+<div>{{ page.a7 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q8 %}
+<div>問8.{{ page.q8 | linebreaksbr }}</div>
+<div>{{ page.a8 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q9 %}
+<div>問9.{{ page.q9 | linebreaksbr }}</div>
+<div>{{ page.a9 | linebreaksbr }}</div>
+{% endif %}
+{% if page.q10 %}
+<div>問10.{{ page.q10 | linebreaksbr }}</div>
+<div>{{ page.a10 | linebreaksbr }}</div>
+{% endif %}
+<br>
+
+<div class="btn-container">
+    <a class="btn" href="{% url 'diary:page_list' %}">フォームリストに戻る</a>
+</div>
+
+{% endblock %}

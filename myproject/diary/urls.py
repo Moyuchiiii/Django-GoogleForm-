@@ -11,4 +11,6 @@ urlpatterns = [
     path("page/<uuid:id>/update/", views.page_update, name="page_update"),
     path("page/<uuid:id>/delete/", views.page_delete, name="page_delete"),
     path("page/<uuid:id>/answer/", views.page_answer, name="page_answer"),
+    path("page/<uuid:id>/answer/list/", views.page_answer_list, name="page_answer_list"),
+    path("page/<uuid:id>/answer/check/", views.page_answer_check, name="page_answer_check"),
 ]

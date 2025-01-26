@@ -70,6 +70,7 @@ class PageAnswerView(LoginRequiredMixin, View):
     def post(self, request, id):
         original_page = get_object_or_404(Page, id=id)
         new_page = Page(
+            original_page=original_page,
             answered_by=request.user,
             title=f"{original_page.title}の回答 {request.user}",
             q1=original_page.q1,
@@ -100,6 +101,16 @@ class PageAnswerView(LoginRequiredMixin, View):
 def signin(request):
     return render(request, 'signin.html')
 
+class PageAnswerListView(LoginRequiredMixin, View):
+    def get(self, request, id):
+        page_list = Page.objects.filter(answertf=True, original_page__id=id).order_by("-page_date")
+        return render(request, "diary/page_answer_list.html", {"page_list": page_list})
+    
+class PageAnswerCheckView(LoginRequiredMixin, View):
+    def get(self, request, id):
+        page = get_object_or_404(Page, id=id)
+        return render(request, "diary/page_answer_check.html", {"page": page})
+
 index = IndexView.as_view()
 page_create = PageCreateView.as_view()
 page_list = PageListView.as_view()
@@ -107,3 +118,5 @@ page_detail = PageDetailView.as_view()
 page_update = PageUpdateView.as_view()
 page_delete = PageDeleteView.as_view()
 page_answer = PageAnswerView.as_view()
+page_answer_list = PageAnswerListView.as_view()
+page_answer_check = PageAnswerCheckView.as_view()

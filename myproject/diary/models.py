@@ -6,6 +6,7 @@ import uuid
 class Page(models.Model):
     answertf = models.BooleanField(default=False, verbose_name="回答")
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, verbose_name="ID")
+    original_page = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='answers')
     title = models.CharField(max_length=100, verbose_name="タイトル")
     q1 = models.CharField(max_length=100, verbose_name="質問1", default="")
     q2 = models.CharField(max_length=100, verbose_name="質問2", default="", blank=True)

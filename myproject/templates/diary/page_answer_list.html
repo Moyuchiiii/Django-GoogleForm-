@@ -1,0 +1,14 @@
+{% extends "base/diary_base.html" %}
+{% block body %}
+<body>
+    <h1>{{ page.title }}回答一覧</h1>
+    <ul>
+        {% for page in page_list %}
+            <li>
+                <a href="{% url 'diary:page_answer_check' page.id %}">{{ page.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+
+{% endblock %}
