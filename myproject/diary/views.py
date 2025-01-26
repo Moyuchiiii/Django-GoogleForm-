@@ -30,7 +30,7 @@ class PageCreateView(LoginRequiredMixin, View):
 
 class PageListView(LoginRequiredMixin, View):
     def get(self, request):
-        page_list = Page.objects.order_by("-page_date")
+        page_list = Page.objects.filter(answertf=False).order_by("-page_date")
         return render(request, "diary/page_list.html", {"page_list": page_list})
     
 class PageDetailView(LoginRequiredMixin, View):
