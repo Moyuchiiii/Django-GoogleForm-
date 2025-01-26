@@ -14,8 +14,10 @@
 <div>{{ page.q9 | linebreaksbr }}</div>
 <div>{{ page.q10 | linebreaksbr }}</div>
 <br>
-<a class="btn" href="{% url 'diary:page_update' page.id %}">変更する</a>
-<a class="btn" href="{% url 'diary:page_delete' page.id %}">削除する</a>
-<a class="btn" href="{% url 'diary:page_answer' page.id %}">回答する</a>
+<div class="btn-container">
+    <a class="btn" href="{% url 'diary:page_update' page.id %}">変更する</a>
+    <a class="btn" href="{% url 'diary:page_delete' page.id %}">削除する</a>
+    <a class="btn" href="{% url 'diary:page_answer' page.id %}">回答する</a>
+</div>
 
 {% endblock %}

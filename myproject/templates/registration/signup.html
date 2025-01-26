@@ -5,7 +5,9 @@
 <form method="POST" class="form">
     {% csrf_token %}
     {{ form.as_p }}
-    <button class="btn" type="submit">サインアップ</button>
+    <div class="btn-container">
+        <button class="btn" type="submit">サインアップ</button>
+    </div>
 </form>
 
 {% endblock %}

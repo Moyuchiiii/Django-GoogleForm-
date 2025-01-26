@@ -4,7 +4,9 @@
 <form method="POST" class="form">
     {% csrf_token %}
     <p>{{page.title}} を削除しますか？</p>
-    <button class="btn" type="submit">削除</button>
+    <div class="btn-container">
+        <button class="btn" type="submit">削除</button>
+    </div>
 </form>
 <h2>{{ page.title}}</h2>
 <div>{{ page.page_date }}</div>

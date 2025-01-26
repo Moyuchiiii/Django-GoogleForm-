@@ -3,13 +3,13 @@
 
 <p class="datetime">{{ datetime_now }}</p>
 <br>
-<a class="btn" href="{% url 'diary:page_create' %}">フォーム作成</a>
-<br>
-<a class="btn" href="{% url 'diary:page_list' %}">フォーム一覧</a>
-<br>
-<form action="{% url 'accounts:logout' %}" method="post">
-    {% csrf_token %}
-    <button class="btn" type="submit">ログアウト</button>
-</form>
+<div class="btn-container">
+    <a class="btn" href="{% url 'diary:page_create' %}">フォーム作成</a>
+    <a class="btn" href="{% url 'diary:page_list' %}">フォーム一覧</a>
+    <form action="{% url 'accounts:logout' %}" method="post">
+        {% csrf_token %}
+        <button class="btn" type="submit">ログアウト</button>
+    </form>
+</div>
 
 {% endblock %}
