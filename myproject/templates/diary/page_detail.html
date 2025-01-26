@@ -1,12 +1,9 @@
 {% extends "base/diary_base.html" %}
 {% block body %}
 
-<h2>{{ page.title}}</h2>
+<h2>{{ page.title }}</h2>
 <div>{{ page.page_date }}</div>
-<div>{{ page.body | linebreaksbr }}</div>
-{% if page.picture %}
-<img src="{{ page.picture.url }}" class="page-picture" style="max-width: 30%; height: auto;"/>
-{% endif %}
+<div>{{ page.q1 | linebreaksbr }}</div>
 <br>
 <a class="btn" href="{% url 'diary:page_update' page.id %}">変更する</a>
 <a class="btn" href="{% url 'diary:page_delete' page.id %}">削除する</a>

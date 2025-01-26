@@ -22,7 +22,7 @@ class PageCreateView(LoginRequiredMixin, View):
         return render(request, "diary/page_form.html", {"form": form})
     
     def post(self, request):
-        form = PageForm(request.POST, request.FILES)
+        form = PageForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("diary:index")
