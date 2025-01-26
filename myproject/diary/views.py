@@ -70,7 +70,8 @@ class PageAnswerView(LoginRequiredMixin, View):
     def post(self, request, id):
         original_page = get_object_or_404(Page, id=id)
         new_page = Page(
-            title=f"{original_page.title}の回答",
+            answered_by=request.user,
+            title=f"{original_page.title}の回答 {request.user}",
             q1=original_page.q1,
             q2=original_page.q2,
             q3=original_page.q3,

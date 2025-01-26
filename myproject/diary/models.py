@@ -30,7 +30,8 @@ class Page(models.Model):
     page_date = models.DateTimeField(auto_now_add=True, verbose_name="日付")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="作成日時")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="更新日時")
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="作成者", default=1)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="作成者", default=1, related_name='created_pages')
+    answered_by = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="回答者", default=1, related_name='answered_pages')
 
     def __str__(self):
         return self.title
