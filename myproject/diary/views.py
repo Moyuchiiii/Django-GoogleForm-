@@ -96,7 +96,9 @@ class PageAnswerView(LoginRequiredMixin, View):
         )
         new_page.save()
         return redirect("diary:page_list")
-    
+
+def signin(request):
+    return render(request, 'signin.html')
 
 index = IndexView.as_view()
 page_create = PageCreateView.as_view()
