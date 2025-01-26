@@ -4,4 +4,4 @@ from .models import Page
 
 @admin.register(Page)
 class PageAdmin(admin.ModelAdmin):
-    readonly_fields = ["id", "created_at", "updated_at"]
+    readonly_fields = ["answertf", "id", "created_at", "updated_at"]

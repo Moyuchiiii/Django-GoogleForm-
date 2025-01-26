@@ -3,9 +3,9 @@
 
 <p class="datetime">{{ datetime_now }}</p>
 <br>
-<a class="btn" href="{% url 'diary:page_create' %}">新規作成</a>
+<a class="btn" href="{% url 'diary:page_create' %}">フォーム作成</a>
 <br>
-<a class="btn" href="{% url 'diary:page_list' %}">一覧</a>
+<a class="btn" href="{% url 'diary:page_list' %}">フォーム一覧</a>
 <br>
 <form action="{% url 'accounts:logout' %}" method="post">
     {% csrf_token %}

@@ -4,8 +4,18 @@
 <h2>{{ page.title }}</h2>
 <div>{{ page.page_date }}</div>
 <div>{{ page.q1 | linebreaksbr }}</div>
+<div>{{ page.q2 | linebreaksbr }}</div>
+<div>{{ page.q3 | linebreaksbr }}</div>
+<div>{{ page.q4 | linebreaksbr }}</div>
+<div>{{ page.q5 | linebreaksbr }}</div>
+<div>{{ page.q6 | linebreaksbr }}</div>
+<div>{{ page.q7 | linebreaksbr }}</div>
+<div>{{ page.q8 | linebreaksbr }}</div>
+<div>{{ page.q9 | linebreaksbr }}</div>
+<div>{{ page.q10 | linebreaksbr }}</div>
 <br>
 <a class="btn" href="{% url 'diary:page_update' page.id %}">変更する</a>
 <a class="btn" href="{% url 'diary:page_delete' page.id %}">削除する</a>
+<a class="btn" href="{% url 'diary:page_answer' page.id %}">回答する</a>
 
 {% endblock %}

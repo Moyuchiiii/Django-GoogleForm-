@@ -61,6 +61,40 @@ class PageDeleteView(LoginRequiredMixin, View):
         page = get_object_or_404(Page, id=id)
         page.delete()
         return redirect("diary:page_list")
+
+class PageAnswerView(LoginRequiredMixin, View):
+    def get(self, request, id):
+        page = get_object_or_404(Page, id=id)
+        return render(request, "diary/page_answer.html", {"page": page})
+    
+    def post(self, request, id):
+        original_page = get_object_or_404(Page, id=id)
+        new_page = Page(
+            title=f"{original_page.title}の回答",
+            q1=original_page.q1,
+            q2=original_page.q2,
+            q3=original_page.q3,
+            q4=original_page.q4,
+            q5=original_page.q5,
+            q6=original_page.q6,
+            q7=original_page.q7,
+            q8=original_page.q8,
+            q9=original_page.q9,
+            q10=original_page.q10,
+            a1=request.POST.get("a1", ""),
+            a2=request.POST.get("a2", ""),
+            a3=request.POST.get("a3", ""),
+            a4=request.POST.get("a4", ""),
+            a5=request.POST.get("a5", ""),
+            a6=request.POST.get("a6", ""),
+            a7=request.POST.get("a7", ""),
+            a8=request.POST.get("a8", ""),
+            a9=request.POST.get("a9", ""),
+            a10=request.POST.get("a10", ""),
+            answertf=True
+        )
+        new_page.save()
+        return redirect("diary:page_list")
     
 
 index = IndexView.as_view()
@@ -69,3 +103,4 @@ page_list = PageListView.as_view()
 page_detail = PageDetailView.as_view()
 page_update = PageUpdateView.as_view()
 page_delete = PageDeleteView.as_view()
+page_answer = PageAnswerView.as_view()
