@@ -3,30 +3,50 @@
 
 <form method="POST" class="form">
     {% csrf_token %}
-<h2>{{ page.title }}</h2>
-<div>{{ page.page_date }}</div>
+    <h2>{{ page.title }}</h2>
+    <div>{{ page.page_date }}</div>
 
-<div>{{ page.q1 | linebreaksbr }}</div>
-<textarea name="a1" rows="4" cols="40"></textarea>
-<div>{{ page.q2 | linebreaksbr }}</div>
-<textarea name="a2" rows="4" cols="40"></textarea>
-<div>{{ page.q3 | linebreaksbr }}</div>
-<textarea name="a3" rows="4" cols="40"></textarea>
-<div>{{ page.q4 | linebreaksbr }}</div>
-<textarea name="a4" rows="4" cols="40"></textarea>
-<div>{{ page.q5 | linebreaksbr }}</div>
-<textarea name="a5" rows="4" cols="40"></textarea>
-<div>{{ page.q6 | linebreaksbr }}</div>
-<textarea name="a6" rows="4" cols="40"></textarea>
-<div>{{ page.q7 | linebreaksbr }}</div>
-<textarea name="a7" rows="4" cols="40"></textarea>
-<div>{{ page.q8 | linebreaksbr }}</div>
-<textarea name="a8" rows="4" cols="40"></textarea>
-<div>{{ page.q9 | linebreaksbr }}</div>
-<textarea name="a9" rows="4" cols="40"></textarea>
-<div>{{ page.q10 | linebreaksbr }}</div>
-<textarea name="a10" rows="4" cols="40"></textarea>
-<br>
+    {% if page.q1 %}
+    <div>{{ page.q1 | linebreaksbr }}</div>
+    <textarea name="a1" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q2 %}
+    <div>{{ page.q2 | linebreaksbr }}</div>
+    <textarea name="a2" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q3 %}
+    <div>{{ page.q3 | linebreaksbr }}</div>
+    <textarea name="a3" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q4 %}
+    <div>{{ page.q4 | linebreaksbr }}</div>
+    <textarea name="a4" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q5 %}
+    <div>{{ page.q5 | linebreaksbr }}</div>
+    <textarea name="a5" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q6 %}
+    <div>{{ page.q6 | linebreaksbr }}</div>
+    <textarea name="a6" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q7 %}
+    <div>{{ page.q7 | linebreaksbr }}</div>
+    <textarea name="a7" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q8 %}
+    <div>{{ page.q8 | linebreaksbr }}</div>
+    <textarea name="a8" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q9 %}
+    <div>{{ page.q9 | linebreaksbr }}</div>
+    <textarea name="a9" rows="4" cols="40"></textarea>
+    {% endif %}
+    {% if page.q10 %}
+    <div>{{ page.q10 | linebreaksbr }}</div>
+    <textarea name="a10" rows="4" cols="40"></textarea>
+    {% endif %}
+    <br>
 
     <button class="btn" type="submit">保存</button>
 </form>
