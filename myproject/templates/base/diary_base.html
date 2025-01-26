@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>Yutaフォーム</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'diary/style.css' %}">
+    </head>
+    <body>
+        <h1><a href="{% url 'diary:index' %}">Yutaフォーム</a></h1>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>
